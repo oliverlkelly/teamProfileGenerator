@@ -2,6 +2,33 @@
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
 
+//classes
+class Employee {
+    constructor(name, employeeID, email){
+        this.name = name;
+        this.employeeID = employeeID;
+        this.email = email;
+    }
+}
+class Manager extends Employee {
+    constructor(name, employeeID, email, officeNum){
+        super(name, employeeID, email);
+        this.officeNum = officeNum;
+    }
+}
+class Engineer extends Employee {
+    constructor(name, employeeID, email, github){
+        super(name, employeeID, email);
+        this.github = github;
+    }
+}
+class Intern extends Employee {
+    constructor(name, employeeID, email, school){
+        super(name, employeeID, email);
+        this.school = school;
+    }
+}
+
 // Question Arrays
 const managerQuestions = [
     {
@@ -80,11 +107,12 @@ const menu = {
     name: 'choice',
 };
 
+
 // get manager data function
 async function managerData() {
     const managerInput = await inquirer.prompt(managerQuestions);
-    //console.log(managerInput);
-    return managerInput;
+    let managerOutput = new Manager(managerInput.name, managerInput.employeeID, managerInput.email, managerInput.officeNum);
+    return managerOutput;
 }
 //get engineer data function
 async function engineerData() {
@@ -105,14 +133,14 @@ async function menuData() {
 
 async function init() {
     var manager = await managerData();
-    var employees = [];
+    var engineers = [];
     var interns = [];
     let done = false;
     do{
         switch(await menuData()){
             case 'Add an Engineer':
-                employees.push(await engineerData());
-                //console.log(employees);
+                engineers.push(await engineerData());
+                //console.log(engineers);
                 break;
             case 'Add an Intern':
                 interns.push(await internData());
@@ -123,9 +151,9 @@ async function init() {
                 break;
         }
     }while(done !== true);
-    // console.log(employees);
+    // console.log(engineers);
     // console.log(interns);
-    // console.log(manager);
+    console.log(manager);
 }
 
 init();
