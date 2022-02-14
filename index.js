@@ -1,6 +1,6 @@
 //Package inclusions
 const inquirer = require('inquirer');
-
+const generateHTML = require('./utils/generateHTML');
 
 // Question Arrays
 const managerQuestions = [
