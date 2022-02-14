@@ -69,6 +69,16 @@ const internQuestions = [
         name: 'school',
     }
 ];
+const menu = {
+    type: 'list',
+    message: 'Would you like to add members to your team?',
+    choices: [
+        'Add an Engineer',
+        'Add an Intern',
+        'No, finish building my team'
+    ],
+    name: 'choice',
+};
 
 // get manager data function
 async function managerData() {
@@ -87,9 +97,12 @@ async function internData() {
 }
 
 async function init() {
-    await managerData();
-    await engineerData();
-    await internData();
+    var manager = await managerData();
+    var employees = [];
+    var interns = [];
+    do{
+        
+    }while(done===false);
 }
 
 init();
