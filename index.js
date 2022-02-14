@@ -95,14 +95,30 @@ async function internData() {
     const internInput = await inquirer.prompt(internQuestions);
     console.log(internInput);
 }
+async function menuData() {
+    const menuSelect = await inquirer.prompt(menu);
+    return menuSelect.choice;
+}
 
 async function init() {
     var manager = await managerData();
     var employees = [];
     var interns = [];
     do{
-        
-    }while(done===false);
+        switch(await menuData()){
+            case 'Add an Engineer':
+                employees.push(await engineerData());
+                console.log(employees);
+                break;
+            case 'Add an Intern':
+                interns.push(await internData());
+                console.log(interns);
+                break;
+            case 'No, finish building my team':
+                done = true;
+                break;
+        }
+    }while(done!==true);
 }
 
 init();
