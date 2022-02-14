@@ -69,3 +69,9 @@ const internQuestions = [
         name: 'school',
     }
 ];
+
+// get manager data function
+async function managerData() {
+    const managerInput = await inquirer.prompt(managerQuestions);
+    console.log(managerInput);
+}
