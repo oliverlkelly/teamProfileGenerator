@@ -75,3 +75,14 @@ async function managerData() {
     const managerInput = await inquirer.prompt(managerQuestions);
     console.log(managerInput);
 }
+async function engineerData() {
+    const engineerInput = await inquirer.prompt(engineerQuestions);
+    console.log(engineerInput);
+}
+
+async function init() {
+    await managerData();
+    await engineerData();
+}
+
+init();
