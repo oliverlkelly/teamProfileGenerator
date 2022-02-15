@@ -1,10 +1,10 @@
 //Package inclusions
-const inquirer = require('inquirer');
-const generateHTML = require('./utils/generateHTML');
-import Employee from './utils/employee';
-import Manager from './utils/manager';
-import Engineer from './utils/engineer';
-import Intern from './utils/intern';
+import inquirer from 'inquirer';
+//import generateHTML from './utils/generateHTML';
+import Employee from './utils/employee.js';
+import Manager from './utils/manager.js';
+import Engineer from './utils/engineer.js';
+import Intern from './utils/intern.js';
 
 // Question Arrays
 const managerQuestions = [
@@ -100,7 +100,7 @@ async function engineerData() {
 //get intern data function
 async function internData() {
     const internInput = await inquirer.prompt(internQuestions);
-    let internOutput = new Intern();
+    let internOutput = new Intern(internInput.name, internInput.employeeID, internInput.email, internInput.school);
     return internOutput;
 }
 async function menuData() {
@@ -109,7 +109,7 @@ async function menuData() {
 }
 
 async function init() {
-    var manager = await managerData();
+    var employees = [await managerData()];
     var engineers = [];
     var interns = [];
     let done = false;
@@ -128,9 +128,13 @@ async function init() {
                 break;
         }
     }while(done !== true);
-    // console.log(engineers);
-    // console.log(interns);
-    //console.log(manager);
+    engineers.forEach(element => {
+        employees.push(element);        
+    });
+    interns.forEach(element => {
+        employees.push(element);
+    });
+    console.log(employees);
 }
 
 init();
