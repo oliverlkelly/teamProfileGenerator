@@ -1,33 +1,10 @@
 //Package inclusions
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
-
-//classes
-class Employee {
-    constructor(name, employeeID, email){
-        this.name = name;
-        this.employeeID = employeeID;
-        this.email = email;
-    }
-}
-class Manager extends Employee {
-    constructor(name, employeeID, email, officeNum){
-        super(name, employeeID, email);
-        this.officeNum = officeNum;
-    }
-}
-class Engineer extends Employee {
-    constructor(name, employeeID, email, github){
-        super(name, employeeID, email);
-        this.github = github;
-    }
-}
-class Intern extends Employee {
-    constructor(name, employeeID, email, school){
-        super(name, employeeID, email);
-        this.school = school;
-    }
-}
+import Employee from './utils/employee';
+import Manager from './utils/manager';
+import Engineer from './utils/engineer';
+import Intern from './utils/intern';
 
 // Question Arrays
 const managerQuestions = [
@@ -117,14 +94,14 @@ async function managerData() {
 //get engineer data function
 async function engineerData() {
     const engineerInput = await inquirer.prompt(engineerQuestions);
-    //console.log(engineerInput);
-    return engineerInput;
+    let engineerOutput = new Engineer(engineerInput.name, engineerInput.employeeID, engineerInput.email, engineerInput.gitName);
+    return engineerOutput;
 }
 //get intern data function
 async function internData() {
     const internInput = await inquirer.prompt(internQuestions);
-    //console.log(internInput);
-    return internInput;
+    let internOutput = new Intern();
+    return internOutput;
 }
 async function menuData() {
     const menuSelect = await inquirer.prompt(menu);
@@ -153,7 +130,7 @@ async function init() {
     }while(done !== true);
     // console.log(engineers);
     // console.log(interns);
-    console.log(manager);
+    //console.log(manager);
 }
 
 init();
