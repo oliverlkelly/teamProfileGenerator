@@ -6,15 +6,30 @@ import Intern from './utils/intern.js';
 function createEmployeeCard(staff){
     switch(staff.constructor.name){
         case 'Manager':
-            
+            return createManagerCard(staff);
             break;
         case 'Engineer':
+            return createEngineerCard(staff);
             break;
         case 'Intern':
+            return createInternCard(staff);
             break;
     }
 }
 
+
+function createManagerCard(staff){
+    const card = ``;
+    return card;
+}
+function createEngineerCard(staff){
+    const card = ``;
+    return card;
+}
+function createInternCard(staff){
+    const card = ``;
+    return card;
+}
 // function generatehtml(data){
 //     return
 // `<!DOCTYPE html>
