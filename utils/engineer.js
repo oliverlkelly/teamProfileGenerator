@@ -4,4 +4,11 @@ export default class Engineer extends Employee {
         super(name, employeeID, email);
         this.github = `https://github.com/${github}`;
     }
+
+    getJob(){
+        return 'Engineer';
+    }
+    getGithub(){
+        return this.github;
+    }
 }

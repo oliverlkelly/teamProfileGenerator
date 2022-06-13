@@ -4,4 +4,11 @@ export default class Intern extends Employee {
         super(name, employeeID, email);
         this.school = school;
     }
+
+    getJob(){
+        return 'Intern';
+    }
+    getSchool(){
+        return this.school;
+    }
 }

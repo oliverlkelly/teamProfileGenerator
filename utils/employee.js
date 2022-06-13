@@ -4,4 +4,17 @@ export default class Employee {
         this.employeeID = employeeID;
         this.email = email;
     }
+
+    getName(){
+        return this.name;
+    }
+    getEmployeeID(){
+        return this.employeeID;
+    }
+    getEmail(){
+        return this.email;
+    }
+    getJob(){
+        return 'Employee';
+    }
 }
