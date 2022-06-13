@@ -1,6 +1,7 @@
 //Package inclusions
 import inquirer from 'inquirer';
-//import generateHTML from './utils/generateHTML';
+import fs from 'fs';
+import generateHTML from './utils/generateHTML.js';
 import Employee from './utils/employee.js';
 import Manager from './utils/manager.js';
 import Engineer from './utils/engineer.js';
@@ -134,7 +135,16 @@ async function init() {
     interns.forEach(element => {
         employees.push(element);
     });
-    console.log(employees);
+
+    const html = generateHTML(employees);
+    fs.writeFile('./index.html', html, err =>{
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Profile Generated!")
+        }
+    })
 }
 
 init();
