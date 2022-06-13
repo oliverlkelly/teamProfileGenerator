@@ -2,10 +2,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./utils/generateHTML.js');
-const Employee = require('../utils/employee.js');
-const Manager = require('../utils/manager.js');
-const Engineer = require('../utils/engineer.js');
-const Intern = require('../utils/intern.js');
+const Employee = require('./utils/employee.js');
+const Manager = require('./utils/manager.js');
+const Engineer = require('./utils/engineer.js');
+const Intern = require('./utils/intern.js');
 
 // Question Arrays
 const managerQuestions = [

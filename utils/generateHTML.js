@@ -1,7 +1,7 @@
-import Employee from './employee.js';
-import Manager from './manager.js';
-import Engineer from './engineer.js';
-import Intern from './intern.js';
+const Employee = require('./employee');
+const Manager = require('./manager');
+const Engineer = require('./engineer');
+const Intern = require('./intern');
 
 function createEmployeeCard(staff){
     const conName = staff.constructor.name;
