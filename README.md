@@ -15,7 +15,7 @@ This project allowed me to learn more about the following;
 
 This project is a command line application and must be cloned, npm installed and run locally.
 
-A video of the testing and usage was also taken and can be found <a src="https://drive.google.com/file/d/1To8RcPJ_0bVb4t0rveIg-VIk7JcYKk4x/view">here</a>.
+A video of the testing and usage was also taken and can be found [here](https://drive.google.com/file/d/1To8RcPJ_0bVb4t0rveIg-VIk7JcYKk4x/view).
 
 ![Alt text](./assets/graphics/screenshot.png?raw=true "Screenshot of my web page")
 
