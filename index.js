@@ -1,11 +1,11 @@
 //Package inclusions
-import inquirer from 'inquirer';
-import fs from 'fs';
-import generateHTML from './utils/generateHTML.js';
-import Employee from './utils/employee.js';
-import Manager from './utils/manager.js';
-import Engineer from './utils/engineer.js';
-import Intern from './utils/intern.js';
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateHTML = require('./utils/generateHTML.js');
+const Employee = require('../utils/employee.js');
+const Manager = require('../utils/manager.js');
+const Engineer = require('../utils/engineer.js');
+const Intern = require('../utils/intern.js');
 
 // Question Arrays
 const managerQuestions = [

@@ -73,7 +73,7 @@ function createInternCard(staff){
     return card;
 }
 
-export default function genmerateHTML(input){
+function generateHTML(input){
     let cardArray = [];
     input.forEach(element => {
         const card = createEmployeeCard(element);
@@ -113,3 +113,5 @@ export default function genmerateHTML(input){
         </html>
     `;
 }
+
+module.exports = generateHTML;

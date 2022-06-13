@@ -1,4 +1,4 @@
-export default class Employee {
+class Employee {
     constructor(name, employeeID, email){
         this.name = name;
         this.employeeID = employeeID;
@@ -18,3 +18,5 @@ export default class Employee {
         return 'Employee';
     }
 }
+
+module.exports = Employee;
